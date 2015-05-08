@@ -1,0 +1,30 @@
+<?php
+    $domain = Mage::getStoreConfig(Freshmit_Pbx123_Helper_Data::XML_PATH_SITE);
+    $apiKey = Mage::getStoreConfig(Freshmit_Pbx123_Helper_Data::XML_PATH_API_KEY);
+    $agileTrackVisitors = Mage::getStoreConfig(Freshmit_Pbx123_Helper_Data::XML_PATH_TRACK_VISITORS);
+    $agileWebrules = Mage::getStoreConfig(Freshmit_Pbx123_Helper_Data::XML_PATH_WEB_RULES);
+    
+if ($domain && $apiKey) {
+?>
+<script src="https://<?php echo $domain?>.agilecrm.com/stats/min/agile-min.js"></script>
+<script>
+_agile.set_account("<?php echo $apiKey?>","<?php echo $domain?>");
+<?php
+if($agileTrackVisitors == 1) {
+    echo '_agile.track_page_view();';
+}
+
+if($agileWebrules == 1) {
+    echo '_agile_execute_web_rules();';
+}
+
+if ($this->helper('customer')->isLoggedIn()) {
+$customer = Mage::getSingleton('customer/session')->getCustomer();
+	echo '_agile.set_email("'.$customer->getEmail().'");';
+} elseif (Mage::getSingleton('customer/session')->getAgileGuestEmail() != null) {
+	echo '_agile.set_email("'.Mage::getSingleton('customer/session')->getAgileGuestEmail().'");';
+	Mage::getSingleton('customer/session')->unsAgileGuestEmail();
+}
+?>
+</script>
+<?php } ?>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <pbx123 translate="label" module="pbx123">
+            <label>AgileCRM</label>
+            <tab>sales</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <analytics translate="label">
+                    <label>General</label>
+                    <comment><![CDATA[ <h3>Do not have an account with Agile CRM? <span style="font-size: 75%;">It's fast and free for two users</span></h3><div><a href="https://www.agilecrm.com/pricing?utm_source=magento&utm_medium=website&utm_campaign=integration" target="_blank" class="form-button" style="color: #fff;text-decoration: none;">Create a new account</a></div><div style="margin:10px 0px;">Once you have created, please come back and fill in the details below</div>]]></comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <heading1 translate="label">
+                            <label><![CDATA[Already have an account? <span style="font-size: 75%;">Enter your details</span>]]></label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </heading1>
+                        <site translate="label">
+                            <label>Domain name</label>
+                            <comment>If you are using abc.agilecrm.com, enter abc</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry</validate>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </site>
+                        <pwtoken translate="label">
+                            <label>Javascript API key</label>
+                            <comment>For instructions to find your API key, please click <![CDATA[<a href="https://github.com/agilecrm/javascript-api#setting-api--analytics" target="_blank">here</a>]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry</validate>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pwtoken>
+                        
+                       <heading2 translate="label">
+                            <label>Settings</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </heading2>
+                        
+                        <sync_customers translate="label">
+                            <label>Sync customers as Contacts in Agile</label>
+                            <frontend_type>Radios</frontend_type>   
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>                       
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sync_customers>
+                        <sync_orders translate="label">
+                            <label>Add Order data as Contact notes</label>
+                            <frontend_type>Radios</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sync_orders>
+                        <web_rules translate="label">
+                            <label>Webrules (Popups)</label>
+                            <frontend_type>Radios</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <value>eeee</value>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </web_rules>
+                        <track_visitors translate="label">
+                            <label>Log web activity of customers</label>
+                            <frontend_type>Radios</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </track_visitors>
+                    </fields>
+                </analytics>
+            </groups>
+        </pbx123>
+    </sections>
+</config>
